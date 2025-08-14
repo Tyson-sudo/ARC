@@ -1,0 +1,28 @@
+X3D Button Injector
+
+This Python script simplifies embedding multiple X3D models into an HTML file. It automatically copies your .x3d files to a specified directory and inserts the necessary HTML <switch> and <button> elements into your HTML template.
+
+Usage
+
+Run the script from the command line with the following arguments:
+
+    --input-folder or -i: The folder containing your .x3d files.
+
+    --output-folder or -o: The destination folder for the copied .x3d files.
+
+    --html-file or -H: The HTML file to be modified.
+
+Example:
+Bash
+
+python your_script_name.py -i ./my_models -o ./assets -H ./index.html
+
+HTML Template
+
+Your HTML file must contain two markers for the script to work:
+
+    PRAGMA1: The script will replace this line with the <group> and <switch> elements for each of your X3D models.
+
+    PRAGMA2: The script will replace this line with a <div class="controls"> containing a toggle button for each model.
+
+Note: You'll need to write your own toggleVisibility JavaScript function in your HTML file to handle the button clicks.
